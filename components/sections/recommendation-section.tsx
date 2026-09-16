@@ -8,13 +8,13 @@ export function RecommendationSection() {
   return (
     <section
       aria-labelledby="recommendation-heading"
-      className="border-b border-border px-6 py-20 sm:py-24"
+      className="px-6 py-20 sm:py-24"
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-12">
         <SectionHeading
           id="recommendation-heading"
           eyebrow="Recommendation"
-          title="A right-sized configuration for this workload"
+          title="A cross-cloud migration plan for this workload"
           description={RECOMMENDATION.rationale}
         />
 
@@ -27,7 +27,7 @@ export function RecommendationSection() {
             className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-7"
           >
             <span className="text-xs uppercase tracking-wide text-muted">
-              Current configuration
+              Current · {RECOMMENDATION.currentProvider}
             </span>
             <span className="font-mono text-lg font-medium text-foreground">
               {RECOMMENDATION.currentInstance}
@@ -41,7 +41,7 @@ export function RecommendationSection() {
                 <dt className="text-muted">Memory</dt>
                 <dd className="text-muted-strong">{RECOMMENDATION.currentMemoryGb} GB RAM</dd>
               </div>
-              <div className="flex justify-between border-t border-border pt-2">
+              <div className="flex justify-between pt-2">
                 <dt className="text-muted">Monthly cost</dt>
                 <dd className="font-mono font-medium text-foreground">
                   ${RECOMMENDATION.currentCost}/month
@@ -81,7 +81,7 @@ export function RecommendationSection() {
             className="flex flex-col gap-4 rounded-2xl border border-accent-green/30 bg-accent-green/[0.05] p-7"
           >
             <span className="text-xs uppercase tracking-wide text-accent-green">
-              Recommended configuration
+              Recommended · {RECOMMENDATION.recommendedProvider}
             </span>
             <span className="font-mono text-lg font-medium text-foreground">
               {RECOMMENDATION.recommendedInstance}
@@ -97,7 +97,7 @@ export function RecommendationSection() {
                   {RECOMMENDATION.recommendedMemoryGb} GB RAM
                 </dd>
               </div>
-              <div className="flex justify-between border-t border-border pt-2">
+              <div className="flex justify-between pt-2">
                 <dt className="text-muted">Monthly cost</dt>
                 <dd className="font-mono font-medium text-accent-green">
                   ${RECOMMENDATION.recommendedCost}/month

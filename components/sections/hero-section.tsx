@@ -7,24 +7,15 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex flex-col items-center justify-center gap-8 overflow-hidden border-b border-border px-6 py-24 text-center sm:py-32"
+      className="relative flex flex-col items-center justify-center gap-8 overflow-hidden px-6 pb-20 pt-20 text-center sm:pb-28 sm:pt-28"
     >
-      <div
-        className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]"
-        aria-hidden="true"
-      />
-
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="relative"
       >
-        <StatusBadge label="Supports AWS, Azure and Google Cloud" />
+        <StatusBadge label="Sovereign by design · AWS, Azure, GCP, IONOS, Hetzner, OVH, STACKIT" />
       </motion.div>
 
       <motion.h1
@@ -32,11 +23,11 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-        className="relative max-w-3xl text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
+        className="relative max-w-4xl text-balance text-4xl font-semibold uppercase leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
       >
-        Optimize your cloud.
+        <span className="text-gradient">The control layer</span>
         <br />
-        Cut unnecessary costs.
+        <span className="text-foreground">for sovereign cloud decisions</span>
       </motion.h1>
 
       <motion.p
@@ -45,22 +36,75 @@ export function HeroSection() {
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         className="relative max-w-xl text-balance text-lg leading-relaxed text-muted"
       >
-        Analyze infrastructure usage, identify waste, and discover smarter
-        cloud configurations.
+        Atomity helps teams decide where every workload should run, prove
+        why, and keep it optimized across clouds.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        className="relative"
+        className="relative flex flex-col items-center gap-3 sm:flex-row"
       >
         <a
           href="#analysis"
-          className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-primary-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          Analyze Infrastructure
+          Get Started
         </a>
+        <a
+          href="#pricing"
+          className="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface px-7 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          Talk to an expert
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+        className="relative mt-8 w-full max-w-4xl"
+      >
+        <div className="card-glow overflow-hidden rounded-2xl border border-border-strong bg-surface/90 backdrop-blur">
+          <div className="flex items-center gap-2 px-5 py-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-accent-orange/60" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-accent-amber/60" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-accent-green/60" aria-hidden="true" />
+            <span className="ml-3 font-mono text-xs text-muted">
+              atomity.io/control-plane
+            </span>
+          </div>
+          <div className="grid grid-cols-1 gap-4 p-5 text-left sm:grid-cols-3 sm:p-8">
+            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
+              <span className="text-xs uppercase tracking-wide text-muted">
+                Realized monthly saving
+              </span>
+              <span className="font-mono text-2xl font-semibold text-accent-green">
+                €9.5k/mo
+              </span>
+              <span className="text-xs text-muted">vs. €9.8k planned</span>
+            </div>
+            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
+              <span className="text-xs uppercase tracking-wide text-muted">
+                Carbon avoided
+              </span>
+              <span className="font-mono text-2xl font-semibold text-foreground">
+                1.8 tCO₂e/mo
+              </span>
+              <span className="text-xs text-muted">verified vs. GCP baseline</span>
+            </div>
+            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
+              <span className="text-xs uppercase tracking-wide text-muted">
+                Data residency
+              </span>
+              <span className="font-mono text-2xl font-semibold text-foreground">
+                100% EU
+              </span>
+              <span className="text-xs text-muted">all workloads in-region</span>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

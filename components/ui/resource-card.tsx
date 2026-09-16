@@ -27,7 +27,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         <UtilizationBar label="Memory utilization" value={resource.memoryUsage} />
       </div>
 
-      <div className="flex items-center justify-between border-t border-border pt-5">
+      <div className="flex items-center justify-between pt-5">
         <span className="text-sm text-muted">Current monthly cost</span>
         <span className="font-mono text-lg font-semibold text-foreground">
           ${resource.monthlyCost.toLocaleString("en-US")}/month

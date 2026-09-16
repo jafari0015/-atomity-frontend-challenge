@@ -18,14 +18,14 @@ export function AnalyzerSection() {
     <section
       id="analysis"
       aria-labelledby="analysis-heading"
-      className="border-b border-border px-6 py-20 sm:py-24"
+      className="px-6 py-20 sm:py-24"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-12">
         <SectionHeading
           id="analysis-heading"
           eyebrow="Analysis"
-          title="Checking cost, performance, and usage"
-          description="Atomity cross-references what you're paying, how powerful your resources are, and how much of that power you actually use."
+          title="Industry's deepest waste detection"
+          description="Atomity correlates configuration, telemetry, code and commitments to surface why a resource is wasteful — not just that it is. Works across AWS, Azure, GCP, Kubernetes, Snowflake and Databricks."
         />
 
         <div ref={containerRef} className="flex flex-col gap-8">

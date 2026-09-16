@@ -1,4 +1,11 @@
-export type CloudProviderId = "aws" | "azure" | "gcp";
+export type CloudProviderId =
+  | "aws"
+  | "azure"
+  | "gcp"
+  | "ionos"
+  | "hetzner"
+  | "ovh"
+  | "stackit";
 
 export interface CloudProvider {
   id: CloudProviderId;
@@ -6,6 +13,7 @@ export interface CloudProvider {
   shortName: string;
   accentColor: string;
   resourceCount: number;
+  sovereign?: boolean;
 }
 
 export type ResourceCategory = "Compute" | "Database" | "Storage" | "Network";
@@ -22,10 +30,12 @@ export interface CloudResource {
 }
 
 export interface OptimizationRecommendation {
+  currentProvider: string;
   currentInstance: string;
   currentVcpu: number;
   currentMemoryGb: number;
   currentCost: number;
+  recommendedProvider: string;
   recommendedInstance: string;
   recommendedVcpu: number;
   recommendedMemoryGb: number;
@@ -33,6 +43,40 @@ export interface OptimizationRecommendation {
   monthlySavings: number;
   yearlySavings: number;
   rationale: string;
+}
+
+export interface CorePillar {
+  id: string;
+  label: string;
+  headline: string;
+  description: string;
+  points: string[];
+}
+
+export interface ProcessStep {
+  index: string;
+  title: string;
+  description: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  title: string;
+}
+
+export interface PricingTier {
+  name: string;
+  audience: string;
+  description: string;
+  features: string[];
+  featured?: boolean;
+  cta: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export interface SavingsSummary {

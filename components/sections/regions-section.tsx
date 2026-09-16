@@ -13,7 +13,7 @@ export function RegionsSection() {
   return (
     <section
       aria-labelledby="regions-heading"
-      className="border-b border-border px-6 py-20 sm:py-24"
+      className="px-6 py-20 sm:py-24"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

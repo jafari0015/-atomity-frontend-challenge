@@ -49,7 +49,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -71,19 +71,29 @@ body {
   -webkit-backdrop-filter: blur(16px);
 }
 
-.bg-grid {
+.nav-glass {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+}
+
+.bg-sand {
+  background-color: var(--background);
   background-image:
-    linear-gradient(
-      to right,
-      color-mix(in srgb, var(--border) 60%, transparent) 1px,
-      transparent 1px
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--border-strong) 70%, transparent) 0,
+      color-mix(in srgb, var(--border-strong) 70%, transparent) 1px,
+      transparent 1px,
+      transparent 18px
     ),
     linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--border) 60%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 48px 48px;
+      color-mix(in srgb, var(--background) 65%, transparent),
+      color-mix(in srgb, var(--background) 65%, transparent)
+    ),
+    url("/sand.png");
+  background-repeat: repeat, repeat, repeat;
+  background-size: 18px 18px, auto, 470px 836px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,7 +10,7 @@ export function SavingsSection() {
   return (
     <section
       aria-labelledby="savings-heading"
-      className="relative overflow-hidden border-b border-border px-6 py-24 sm:py-32"
+      className="relative overflow-hidden px-6 py-24 sm:py-32"
     >
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-green/10 blur-[130px]"

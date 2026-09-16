@@ -20,14 +20,14 @@ export function ConnectionFlowSection() {
   return (
     <section
       aria-labelledby="connection-heading"
-      className="border-b border-border px-6 py-20 sm:py-24"
+      className="px-6 py-20 sm:py-24"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-12">
         <SectionHeading
           id="connection-heading"
           eyebrow="Data flow"
-          title="Every signal, one analysis engine"
-          description="Cost, performance, and usage signals stream continuously from each provider into Atomity's optimization engine."
+          title="Ingest, understand, decide, act — continuously"
+          description="Billing, usage, and activity signals stream from every connected cloud into an isolated, per-customer intelligence core."
         />
 
         <div

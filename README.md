@@ -1,4 +1,4 @@
-# Atomity Cloud Optimization
+# Opsera Cloud Optimization
 
 A single-page frontend simulation of a cloud cost optimization product. It walks
 through the story of a company's cloud spend: infrastructure is connected, cost /

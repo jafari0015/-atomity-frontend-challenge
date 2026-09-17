@@ -25,7 +25,7 @@ export function AnalyzerSection() {
           id="analysis-heading"
           eyebrow="Analysis"
           title="Industry's deepest waste detection"
-          description="Atomity correlates configuration, telemetry, code and commitments to surface why a resource is wasteful — not just that it is. Works across AWS, Azure, GCP, Kubernetes, Snowflake and Databricks."
+          description="Opsera correlates configuration, telemetry, code and commitments to surface why a resource is wasteful — not just that it is. Works across AWS, Azure, GCP, Kubernetes, Snowflake and Databricks."
         />
 
         <div ref={containerRef} className="flex flex-col gap-8">

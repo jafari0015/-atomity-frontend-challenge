@@ -9,14 +9,6 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative flex flex-col items-center justify-center gap-8 overflow-hidden px-6 pb-20 pt-20 text-center sm:pb-28 sm:pt-28"
     >
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative"
-      >
-        <StatusBadge label="Sovereign by design · AWS, Azure, GCP, IONOS, Hetzner, OVH, STACKIT" />
-      </motion.div>
 
       <motion.h1
         id="hero-heading"
@@ -25,9 +17,10 @@ export function HeroSection() {
         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         className="relative max-w-4xl text-balance text-4xl font-semibold uppercase leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
       >
-        <span className="text-gradient">The control layer</span>
+        <span className="text-gradient">COMPARE CLOUDS.</span>
         <br />
-        <span className="text-foreground">for sovereign cloud decisions</span>
+        <span className="text-primary">CUT COSTS.</span> <br />
+        <span className="text-foreground"> STAY IN CONTROL.</span>
       </motion.h1>
 
       <motion.p
@@ -36,30 +29,9 @@ export function HeroSection() {
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         className="relative max-w-xl text-balance text-lg leading-relaxed text-muted"
       >
-        Atomity helps teams decide where every workload should run, prove
+        Opsera helps teams decide where every workload should run, prove
         why, and keep it optimized across clouds.
       </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        className="relative flex flex-col items-center gap-3 sm:flex-row"
-      >
-        <a
-          href="#analysis"
-          className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          Get Started
-        </a>
-        <a
-          href="#pricing"
-          className="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface px-7 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          Talk to an expert
-        </a>
-      </motion.div>
-
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
@@ -72,7 +44,7 @@ export function HeroSection() {
             <span className="h-2.5 w-2.5 rounded-full bg-accent-amber/60" aria-hidden="true" />
             <span className="h-2.5 w-2.5 rounded-full bg-accent-green/60" aria-hidden="true" />
             <span className="ml-3 font-mono text-xs text-muted">
-              atomity.io/control-plane
+              Opsera.io/control-plane
             </span>
           </div>
           <div className="grid grid-cols-1 gap-4 p-5 text-left sm:grid-cols-3 sm:p-8">

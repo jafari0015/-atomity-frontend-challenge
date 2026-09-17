@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Atomity — The Control Layer for Sovereign Cloud Decisions",
+  title: "Opsera — The Control Layer for Sovereign Cloud Decisions",
   description:
-    "Atomity helps teams decide where every workload should run, prove why, and keep it optimized across clouds — with cost, compliance, sovereignty and carbon in one control layer.",
+    "Opsera helps teams decide where every workload should run, prove why, and keep it optimized across clouds — with cost, compliance, sovereignty and carbon in one control layer.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

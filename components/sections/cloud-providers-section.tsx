@@ -13,7 +13,7 @@ export function CloudProvidersSection() {
           id="providers-heading"
           eyebrow="Connected accounts"
           title="Your cloud, in one view — hyperscaler or sovereign"
-          description="Atomity connects to the providers you already run infrastructure on, and the European sovereign clouds you're evaluating."
+          description="Opsera connects to the providers you already run infrastructure on, and the European sovereign clouds you're evaluating."
         />
         <div className="flex flex-col gap-6">
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted">

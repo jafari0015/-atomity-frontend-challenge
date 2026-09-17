@@ -38,7 +38,7 @@ export function ConnectionFlowSection() {
             viewBox="0 0 680 240"
             className="h-auto w-full"
             role="img"
-            aria-label="Diagram showing AWS, Azure and Google Cloud connecting into the Atomity optimization engine"
+            aria-label="Diagram showing AWS, Azure and Google Cloud connecting into the Opsera optimization engine"
           >
             {SOURCE_Y.map((y, index) => {
               const d = `M 96 ${y} C ${MERGE_X - 80} ${y}, ${MERGE_X - 80} ${MERGE_Y}, ${MERGE_X} ${MERGE_Y}`;

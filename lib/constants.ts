@@ -12,10 +12,10 @@ import type {
 } from "@/types";
 
 export const NAV_LINKS = [
-  { label: "Pricing", href: "#pricing" },
-  { label: "Capabilities", href: "#pillars" },
-  { label: "Customers", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Platforms", href: "#paltforms" },
+  { label: "How it work's", href: "#how-it-works" },
+  { label: "Cloud Provider", href: "#cloud-provider" },
+  { label: "Optimization", href: "#optimization" },
 ];
 
 export const CLOUD_PROVIDERS: CloudProvider[] = [
@@ -116,7 +116,7 @@ export const CORE_PILLARS: CorePillar[] = [
     label: "Economics",
     headline: "Unpredictable cloud and AI spend, brought under control",
     description:
-      "AI workloads create volatile, hard-to-control infrastructure spend. Atomity eliminates waste and automates FinOps decisions.",
+      "AI workloads create volatile, hard-to-control infrastructure spend. Opsera eliminates waste and automates FinOps decisions.",
     points: [
       "Eliminate cloud waste from overprovisioning and idle compute",
       "GPU cost optimization for AI workloads",
@@ -235,19 +235,19 @@ export const SAVINGS_SUMMARY: SavingsSummary = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Atomity addresses a crucial question for Europe's digital future: how can we strengthen digital capabilities without losing control over critical infrastructure?",
+      "Opsera addresses a crucial question for Europe's digital future: how can we strengthen digital capabilities without losing control over critical infrastructure?",
     name: "Dr. Matthias Wilkes",
     title: "Landrat a.D., Bergstraße Regional Chairman MIT",
   },
   {
     quote:
-      "Atomity is closing a gap by securing data autonomy across cloud services and cuts cost.",
+      "Opsera is closing a gap by securing data autonomy across cloud services and cuts cost.",
     name: "Dieter Brockmeyer",
     title: "Founder, Diplomatic World Institute",
   },
   {
     quote:
-      "Atomity is responding to a growing public-sector need: making cloud infrastructure decisions more transparent, structured and controllable.",
+      "Opsera is responding to a growing public-sector need: making cloud infrastructure decisions more transparent, structured and controllable.",
     name: "Thomas Wieland",
     title: "Head of Digitalization and E-Government, Metropolregion Rhein-Neckar",
   },
@@ -311,23 +311,23 @@ export const FAQS: FaqItem[] = [
       "Data residency is about where data is stored or processed. Sovereignty is about whose laws govern access to it. EU data residency alone does not remove foreign jurisdictional exposure such as the US CLOUD Act.",
   },
   {
-    question: "Is Atomity a cloud provider?",
+    question: "Is Opsera a cloud provider?",
     answer:
-      "No. Atomity is not a cloud provider, hyperscaler, or data center. It is a control layer that sits above your existing clouds.",
+      "No. Opsera is not a cloud provider, hyperscaler, or data center. It is a control layer that sits above your existing clouds.",
   },
   {
-    question: "How is Atomity different from a FinOps or CSPM tool?",
+    question: "How is Opsera different from a FinOps or CSPM tool?",
     answer:
-      "Most FinOps tools optimize cost and most CSPM tools optimize security posture. Atomity sits one layer up as a decision-and-control layer that brings cost, compliance, sovereignty, and carbon into a single, auditable placement decision.",
+      "Most FinOps tools optimize cost and most CSPM tools optimize security posture. Opsera sits one layer up as a decision-and-control layer that brings cost, compliance, sovereignty, and carbon into a single, auditable placement decision.",
   },
   {
-    question: "Which clouds does Atomity work with?",
+    question: "Which clouds does Opsera work with?",
     answer:
-      "Atomity works across hyperscaler and European sovereign providers, including AWS, Azure, and Google Cloud, alongside STACKIT, Hetzner, OVH, and IONOS.",
+      "Opsera works across hyperscaler and European sovereign providers, including AWS, Azure, and Google Cloud, alongside STACKIT, Hetzner, OVH, and IONOS.",
   },
   {
-    question: "Does Atomity run or host my workloads?",
+    question: "Does Opsera run or host my workloads?",
     answer:
-      "No. Atomity evaluates requirements, checks policy, assesses sovereignty, residency, risk and cost, and helps you decide and document where workloads should run.",
+      "No. Opsera evaluates requirements, checks policy, assesses sovereignty, residency, risk and cost, and helps you decide and document where workloads should run.",
   },
 ];

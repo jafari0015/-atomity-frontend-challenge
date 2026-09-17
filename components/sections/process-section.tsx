@@ -15,7 +15,7 @@ export function ProcessSection() {
           id="process-heading"
           eyebrow="How it works"
           title="From detection to verified savings, in five steps"
-          description="Atomity runs the same continuous loop for every workload — no manual spreadsheets, no guesswork."
+          description="Opsera runs the same continuous loop for every workload — no manual spreadsheets, no guesswork."
         />
 
         <div className="relative flex flex-col gap-6">

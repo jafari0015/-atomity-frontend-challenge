@@ -43,7 +43,7 @@ export function FooterSection() {
             <div className="flex items-center gap-2.5">
               <LogoMark className="h-7 w-7" />
               <span className="text-base font-semibold tracking-tight text-foreground">
-                Atomity
+                Opsera
               </span>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
@@ -51,7 +51,7 @@ export function FooterSection() {
             </p>
             <a
               href="#"
-              aria-label="Atomity on LinkedIn"
+              aria-label="Opsera on LinkedIn"
               className="mt-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-primary hover:text-foreground"
             >
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
@@ -88,7 +88,7 @@ export function FooterSection() {
         </div>
 
         <div className="flex flex-col gap-4 pt-8 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Atomity. All rights reserved.</span>
+          <span>© 2026 Opsera. All rights reserved.</span>
           <span>Demonstration data only, not a real infrastructure recommendation.</span>
         </div>
       </div>

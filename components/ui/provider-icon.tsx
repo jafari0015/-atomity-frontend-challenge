@@ -65,6 +65,77 @@ export function ProviderIcon({ provider, className, style }: ProviderIconProps) 
     );
   }
 
+  if (provider === "ionos") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
+        <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M8.5 13.5 12 10l3.5 3.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (provider === "hetzner") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
+        <path
+          d="M12 3.5 19 7.5v9L12 20.5 5 16.5v-9L12 3.5Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path d="M9.5 9.5v5M14.5 9.5v5M9.5 12h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (provider === "ovh") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
+        <path
+          d="M12 4 20 12l-8 8-8-8 8-8Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path d="M8.5 12h7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      </svg>
+    );
+  }
+
+  if (provider === "stackit") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
+        <path
+          d="M12 3.5 20 8l-8 4.5L4 8l8-4.5Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="m4 12 8 4.5L20 12"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="m4 16 8 4.5L20 16"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.6"
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
       <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.5" />

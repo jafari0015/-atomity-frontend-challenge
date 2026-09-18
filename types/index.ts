@@ -11,38 +11,10 @@ export interface CloudProvider {
   id: CloudProviderId;
   name: string;
   shortName: string;
+  description: string;
   accentColor: string;
   resourceCount: number;
   sovereign?: boolean;
-}
-
-export type ResourceCategory = "Compute" | "Database" | "Storage" | "Network";
-
-export interface CloudResource {
-  provider: CloudProviderId;
-  category: ResourceCategory;
-  name: string;
-  instance: string;
-  monthlyCost: number;
-  cpuUsage: number;
-  memoryUsage: number;
-  status: "Underutilized" | "Optimized" | "At risk";
-}
-
-export interface OptimizationRecommendation {
-  currentProvider: string;
-  currentInstance: string;
-  currentVcpu: number;
-  currentMemoryGb: number;
-  currentCost: number;
-  recommendedProvider: string;
-  recommendedInstance: string;
-  recommendedVcpu: number;
-  recommendedMemoryGb: number;
-  recommendedCost: number;
-  monthlySavings: number;
-  yearlySavings: number;
-  rationale: string;
 }
 
 export interface CorePillar {
@@ -57,12 +29,24 @@ export interface ProcessStep {
   index: string;
   title: string;
   description: string;
+  panel: {
+    accent: "cyan" | "primary" | "amber" | "green";
+    meta: string;
+    label: string;
+    headline: string;
+    subline: string;
+    badge: string;
+    rows: { code: string; title: string; tag: string }[];
+    footer: string;
+  };
 }
 
 export interface Testimonial {
   quote: string;
   name: string;
   title: string;
+  organization: string;
+  logo: string;
 }
 
 export interface PricingTier {
@@ -72,6 +56,8 @@ export interface PricingTier {
   features: string[];
   featured?: boolean;
   cta: string;
+  /** Monthly list price in EUR; 0 means free. */
+  monthlyPrice: number;
 }
 
 export interface FaqItem {
@@ -79,22 +65,3 @@ export interface FaqItem {
   answer: string;
 }
 
-export interface SavingsSummary {
-  monthlySavings: number;
-  yearlySavings: number;
-  costReductionPercent: number;
-}
-
-export interface AnalysisMetrics {
-  resourcesScanned: number;
-  monthlyCloudCost: number;
-  averageUtilizationPercent: number;
-  potentialSavings: number;
-}
-
-export interface CloudRegion {
-  code: string;
-  name: string;
-  continent: string;
-  flag: string;
-}

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff3e6;
+  --background: #E5E7EB;
   --surface: #ffffff;
-  --surface-raised: #f8e8d8;
-  --border: #ecdac6;
-  --border-strong: #ddc3a8;
+  --surface-raised: #f3f4f6;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
   --foreground:#000000;
-  --muted: #8c7684;
-  --muted-strong: #6a4f60;
-  --primary: #381932;
-  --primary-strong: #241020;
-  --accent-cyan: #2f8fa3;
-  --accent-green: #1f9d6b;
-  --accent-amber: #c07a12;
+  --muted: #59677c;
+  --muted-strong: #475569;
+  --primary: #006d77;
+  --primary-strong: #00525a;
+  --accent-cyan: #267282;
+  --accent-green: #187751;
+  --accent-amber: #8e5a0d;
   --accent-aws: #b3690f;
   --accent-azure: #1f7fae;
   --accent-gcp: #1f9d6b;
@@ -36,22 +36,39 @@
   --color-accent-aws: var(--accent-aws);
   --color-accent-azure: var(--accent-azure);
   --color-accent-gcp: var(--accent-gcp);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-* {
-  border-color: var(--border);
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 }
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
-  background: transparent;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      ellipse 0.5px 1px at 0.5px 1px,
+      color-mix(in srgb, var(--muted) 30%, transparent) 100%,
+      transparent 0
+    ),
+    linear-gradient(
+      color-mix(in srgb, var(--background) 90%, transparent),
+      color-mix(in srgb, var(--background) 90%, transparent)
+    ),
+    url("/background.png");
+  background-repeat: repeat, repeat, repeat;
+  background-size: 30px 6px, auto, 696px 1237px;
   color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {
@@ -65,35 +82,24 @@ body {
   border-radius: 4px;
 }
 
-.glass-panel {
-  background: color-mix(in srgb, var(--surface) 80%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
 .nav-glass {
   background: color-mix(in srgb, var(--surface) 100%, transparent);
   backdrop-filter: blur(24px) saturate(1.2);
   -webkit-backdrop-filter: blur(24px) saturate(1.2);
 }
 
-.bg-sand {
-  background-color: var(--background);
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--border-strong) 50%, transparent) 0,
-      color-mix(in srgb, var(--border-strong) 50%, transparent) 1px,
-      transparent 1px,
-      transparent 18px
-    ),
-    linear-gradient(
-      color-mix(in srgb, var(--background) 65%, transparent),
-      color-mix(in srgb, var(--background) 65%, transparent)
-    ),
-    url("/sand.png");
-  background-repeat: repeat, repeat, repeat;
-  background-size: 18px 18px, auto, 470px 836px;
+@keyframes trusted-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trusted-marquee {
+  animation: trusted-marquee 35s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { StatusBadge } from "@/components/ui/status-badge";
+import CloudAnalyzer from "./cloud-analyzer";
 
 export function HeroSection() {
   return (
@@ -36,47 +36,9 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-        className="relative mt-8 w-full max-w-4xl"
+        className="relative mt-8 w-full max-w-6xl"
       >
-        <div className="card-glow overflow-hidden rounded-2xl border border-border-strong bg-surface/90 backdrop-blur">
-          <div className="flex items-center gap-2 px-5 py-3">
-            <span className="h-2.5 w-2.5 rounded-full bg-accent-orange/60" aria-hidden="true" />
-            <span className="h-2.5 w-2.5 rounded-full bg-accent-amber/60" aria-hidden="true" />
-            <span className="h-2.5 w-2.5 rounded-full bg-accent-green/60" aria-hidden="true" />
-            <span className="ml-3 font-mono text-xs text-muted">
-              Opsera.io/control-plane
-            </span>
-          </div>
-          <div className="grid grid-cols-1 gap-4 p-5 text-left sm:grid-cols-3 sm:p-8">
-            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
-              <span className="text-xs uppercase tracking-wide text-muted">
-                Realized monthly saving
-              </span>
-              <span className="font-mono text-2xl font-semibold text-accent-green">
-                €9.5k/mo
-              </span>
-              <span className="text-xs text-muted">vs. €9.8k planned</span>
-            </div>
-            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
-              <span className="text-xs uppercase tracking-wide text-muted">
-                Carbon avoided
-              </span>
-              <span className="font-mono text-2xl font-semibold text-foreground">
-                1.8 tCO₂e/mo
-              </span>
-              <span className="text-xs text-muted">verified vs. GCP baseline</span>
-            </div>
-            <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface-raised p-4">
-              <span className="text-xs uppercase tracking-wide text-muted">
-                Data residency
-              </span>
-              <span className="font-mono text-2xl font-semibold text-foreground">
-                100% EU
-              </span>
-              <span className="text-xs text-muted">all workloads in-region</span>
-            </div>
-          </div>
-        </div>
+        <CloudAnalyzer />
       </motion.div>
     </section>
   );

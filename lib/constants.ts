@@ -1,21 +1,17 @@
 import type {
-  AnalysisMetrics,
   CloudProvider,
-  CloudResource,
   CorePillar,
   FaqItem,
-  OptimizationRecommendation,
   PricingTier,
   ProcessStep,
-  SavingsSummary,
   Testimonial,
 } from "@/types";
 
 export const NAV_LINKS = [
-  { label: "Platforms", href: "#paltforms" },
-  { label: "How it work's", href: "#how-it-works" },
-  { label: "Cloud Provider", href: "#cloud-provider" },
-  { label: "Optimization", href: "#optimization" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Cloud providers", href: "#cloud-providers" },
+  { label: "Optimization", href: "#analysis" },
+  { label: "Platform", href: "#pillars" },
 ];
 
 export const CLOUD_PROVIDERS: CloudProvider[] = [
@@ -23,6 +19,8 @@ export const CLOUD_PROVIDERS: CloudProvider[] = [
     id: "aws",
     name: "Amazon Web Services",
     shortName: "AWS",
+    description:
+      "Compute, storage and managed data services scored across every region you run in.",
     accentColor: "#f59e0b",
     resourceCount: 54,
   },
@@ -30,13 +28,17 @@ export const CLOUD_PROVIDERS: CloudProvider[] = [
     id: "azure",
     name: "Microsoft Azure",
     shortName: "Azure",
+    description:
+      "Subscriptions, resource groups and reserved instances reviewed in one place.",
     accentColor: "#38bdf8",
     resourceCount: 41,
   },
   {
     id: "gcp",
-    name: "Google Cloud",
+    name: "Google Cloud Platform",
     shortName: "Google Cloud",
+    description:
+      "Projects, committed-use discounts and analytics spend tracked continuously.",
     accentColor: "#34d399",
     resourceCount: 33,
   },
@@ -47,14 +49,18 @@ export const SOVEREIGN_PROVIDERS: CloudProvider[] = [
     id: "ionos",
     name: "IONOS Cloud",
     shortName: "IONOS",
+    description:
+      "German-operated cloud with full data residency and processing inside the EU.",
     accentColor: "#7c5cff",
     resourceCount: 18,
     sovereign: true,
   },
   {
     id: "hetzner",
-    name: "Hetzner",
+    name: "Hetzner Cloud",
     shortName: "Hetzner",
+    description:
+      "Cost-efficient European compute for steady-state and batch workloads.",
     accentColor: "#ff6a2b",
     resourceCount: 12,
     sovereign: true,
@@ -63,14 +69,18 @@ export const SOVEREIGN_PROVIDERS: CloudProvider[] = [
     id: "ovh",
     name: "OVHcloud",
     shortName: "OVH",
+    description:
+      "Sovereign French infrastructure with predictable, flat-rate pricing.",
     accentColor: "#4fd1e8",
     resourceCount: 9,
     sovereign: true,
   },
   {
     id: "stackit",
-    name: "STACKIT",
+    name: "STACKIT Cloud",
     shortName: "STACKIT",
+    description:
+      "Sovereign German platform built for regulated, data-sensitive workloads.",
     accentColor: "#f5b544",
     resourceCount: 7,
     sovereign: true,
@@ -83,30 +93,100 @@ export const PROCESS_STEPS: ProcessStep[] = [
     title: "Detect optimization",
     description:
       "Every workload is continuously scored across cloud, IONOS, Hetzner, OVH and STACKIT configurations to surface where it should actually run.",
+    panel: {
+      accent: "cyan",
+      meta: "~30 s",
+      label: "Detection report",
+      headline: "scan-4821",
+      subline: "128 resources · 7 providers · 30-day window",
+      badge: "live",
+      rows: [
+        { code: "128", title: "Resources monitored", tag: "Live" },
+        { code: "31%", title: "Sustained utilization", tag: "Below target" },
+        { code: "$9,800", title: "Monthly waste surfaced", tag: "Recoverable" },
+      ],
+      footer: "+ 37 workloads flagged with a reason",
+    },
   },
   {
     index: "02",
     title: "Engine processes fix",
     description:
       "The optimization engine builds a cross-cloud migration plan, weighing cost, sovereignty, compliance and carbon together.",
+    panel: {
+      accent: "primary",
+      meta: "2–4 min",
+      label: "Migration plan",
+      headline: "plan-2214",
+      subline: "7 providers compared · 4 weighted factors",
+      badge: "draft",
+      rows: [
+        { code: "7", title: "Providers compared", tag: "Ranked" },
+        { code: "4", title: "Trade-offs balanced", tag: "Tuned" },
+        { code: "37", title: "Sequenced moves", tag: "Drafted" },
+      ],
+      footer: "+ rollback points on every move",
+    },
   },
   {
     index: "03",
     title: "Benchmark & approve",
     description:
       "Throughput, p95 SLA, and risk are benchmarked before anything moves. Every plan ships with a confidence score.",
+    panel: {
+      accent: "amber",
+      meta: "8–12 min",
+      label: "Benchmark run",
+      headline: "bench-0917",
+      subline: "Production traffic replayed · 37 candidates",
+      badge: "passing",
+      rows: [
+        { code: "+4%", title: "Throughput delta", tag: "Improved" },
+        { code: "128 ms", title: "p95 under real load", tag: "Within SLA" },
+        { code: "96%", title: "Confidence score", tag: "Signed off" },
+      ],
+      footer: "+ 3 workloads held for sovereignty review",
+    },
   },
   {
     index: "04",
     title: "Execute & notify",
     description:
       "A pull request is drafted, a Jira ticket opens, and the owning team is pinged in Slack. Engineering keeps control.",
+    panel: {
+      accent: "primary",
+      meta: "Guarded",
+      label: "Change set",
+      headline: "OPS-2214",
+      subline: "34 pull requests · terraform/eu-central",
+      badge: "in review",
+      rows: [
+        { code: "34", title: "Pull requests opened", tag: "Awaiting review" },
+        { code: "34", title: "Tickets linked", tag: "Tracked" },
+        { code: "0", title: "Rollbacks needed", tag: "Under control" },
+      ],
+      footer: "+ nothing moves until engineering approves",
+    },
   },
   {
     index: "05",
     title: "Measure savings",
     description:
       "Realized savings are verified against the plan, workload by workload, month after month.",
+    panel: {
+      accent: "green",
+      meta: "Monthly",
+      label: "Savings ledger",
+      headline: "FY-2026",
+      subline: "34 of 34 workloads reconciled against plan",
+      badge: "verified",
+      rows: [
+        { code: "$9,800", title: "Realized monthly savings", tag: "Verified" },
+        { code: "$117,600", title: "Annualised impact", tag: "On track" },
+        { code: "41%", title: "In-region carbon cut", tag: "Reported" },
+      ],
+      footer: "+ evidence exported for finance and audit",
+    },
   },
 ];
 
@@ -191,67 +271,35 @@ export const CORE_PILLARS: CorePillar[] = [
   },
 ];
 
-export const ANALYSIS_METRICS: AnalysisMetrics = {
-  resourcesScanned: 128,
-  monthlyCloudCost: 18600,
-  averageUtilizationPercent: 31,
-  potentialSavings: 9800,
-};
-
-export const FLAGGED_RESOURCE: CloudResource = {
-  provider: "gcp",
-  category: "Compute",
-  name: "Production inference cluster",
-  instance: "a2-highgpu-4g",
-  monthlyCost: 18600,
-  cpuUsage: 19,
-  memoryUsage: 27,
-  status: "Underutilized",
-};
-
-export const RECOMMENDATION: OptimizationRecommendation = {
-  currentProvider: "Google Cloud",
-  currentInstance: "a2-highgpu-4g",
-  currentVcpu: 48,
-  currentMemoryGb: 340,
-  currentCost: 18600,
-  recommendedProvider: "IONOS Cloud",
-  recommendedInstance: "H200-S · Continuity",
-  recommendedVcpu: 32,
-  recommendedMemoryGb: 256,
-  recommendedCost: 8800,
-  monthlySavings: 9800,
-  yearlySavings: 117600,
-  rationale:
-    "Balanced option with low risk and a strong fit: same SLA envelope, EU-resident by default, at less than half the monthly cost.",
-};
-
-export const SAVINGS_SUMMARY: SavingsSummary = {
-  monthlySavings: 9800,
-  yearlySavings: 117600,
-  costReductionPercent: 53,
-};
-
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "Opsera addresses a crucial question for Europe's digital future: how can we strengthen digital capabilities without losing control over critical infrastructure?",
     name: "Dr. Matthias Wilkes",
     title: "Landrat a.D., Bergstraße Regional Chairman MIT",
+    organization: "Wirtschaftsregion Bergstraße",
+    logo: "/wirtschaftsregion-bergstrasse-new.avif",
   },
   {
     quote:
       "Opsera is closing a gap by securing data autonomy across cloud services and cuts cost.",
     name: "Dieter Brockmeyer",
     title: "Founder, Diplomatic World Institute",
+    organization: "Diplomatic World Institute",
+    logo: "/diplomatic-world.svg",
   },
   {
     quote:
       "Opsera is responding to a growing public-sector need: making cloud infrastructure decisions more transparent, structured and controllable.",
     name: "Thomas Wieland",
     title: "Head of Digitalization and E-Government, Metropolregion Rhein-Neckar",
+    organization: "Metropolregion Rhein-Neckar",
+    logo: "/metropolregion-rhein-neckar-new.svg",
   },
 ];
+
+// Prices are placeholders until real pricing is confirmed.
+export const YEARLY_DISCOUNT = 0.2;
 
 export const PRICING_TIERS: PricingTier[] = [
   {
@@ -266,7 +314,8 @@ export const PRICING_TIERS: PricingTier[] = [
       "Cost and performance recommendations",
       "Waste detection for underutilized resources",
     ],
-    cta: "View pricing details",
+    cta: "Start for free",
+    monthlyPrice: 0,
   },
   {
     name: "Optimize",
@@ -281,7 +330,8 @@ export const PRICING_TIERS: PricingTier[] = [
       "Carbon tracking per workload",
     ],
     featured: true,
-    cta: "Talk to an expert",
+    cta: "Get started",
+    monthlyPrice: 1200,
   },
   {
     name: "Orchestrate",
@@ -295,7 +345,8 @@ export const PRICING_TIERS: PricingTier[] = [
       "Dedicated, isolated intelligence core",
       "White-glove onboarding and SLAs",
     ],
-    cta: "Talk to an expert",
+    cta: "Get started",
+    monthlyPrice: 3500,
   },
 ];
 

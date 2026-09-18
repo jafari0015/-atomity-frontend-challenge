@@ -28,11 +28,6 @@ export function SectionHeading({
       >
         {title}
       </h2>
-      {description ? (
-        <p className="max-w-xl text-balance text-base leading-relaxed text-muted">
-          {description}
-        </p>
-      ) : null}
     </div>
   );
 }

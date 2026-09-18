@@ -1,37 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { NAV_LINKS } from "@/lib/constants";
-import Image from 'next/image'
-const SCROLL_THRESHOLD = 20;
+import Image from "next/image";
 
 export function NavBar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY >= SCROLL_THRESHOLD);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
     <header className="pointer-events-none sticky top-0 z-50 bg-transparent px-4 pt-4">
-      <div
-        className={`pointer-events-auto mx-auto w-full max-w-6xl rounded-full transition-[background-color,backdrop-filter] duration-300 ${scrolled ? "nav-glass" : "bg-transparent backdrop-blur-none"
-          }`}
-      >
-        <div className="flex h-18 items-center justify-between px-4 sm:px-6">
+      <div className="nav-glass pointer-events-auto mx-auto w-full max-w-6xl overflow-hidden rounded-[28px] md:rounded-full">
+        <div className="flex h-14 items-center justify-between px-4 sm:h-18 sm:px-6">
           <a
             href="#top"
             className="text-2xl font-semibold tracking-tight text-foreground"
           >
             <Image
-              src={"/logo.svg"}
+              src="/logo.svg"
               alt="Opsera"
-              width={200}
-              height={200}
+              width={341}
+              height={77}
+              priority
+              className="h-7 w-auto sm:h-10"
             />
           </a>
           <nav
@@ -42,7 +35,7 @@ export function NavBar() {
               <a
                 key={link.href}
                 href={link.href}
-                className=" relative text-sm font-semibold text-muted transition-colors duration-200 hover:text-foreground after:absolute after:left-0 after:-bottom-2 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
+                className="relative py-2 text-sm text-muted transition-colors duration-200 hover:text-foreground after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
               >
                 {link.label}
               </a>
@@ -63,10 +56,14 @@ export function NavBar() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label="Toggle navigation menu"
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg text-foreground md:hidden ${scrolled ? "border border-border-strong" : "border border-transparent"
-              }`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border-strong text-foreground md:hidden"
           >
-            <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="h-4 w-4"
+              aria-hidden="true"
+            >
               {open ? (
                 <path
                   d="M6 6l12 12M18 6 6 18"
@@ -86,29 +83,42 @@ export function NavBar() {
           </button>
         </div>
 
-        {open ? (
-          <nav
-            aria-label="Mobile"
-            className="flex flex-col gap-1 px-4 py-4 sm:px-6 md:hidden"
-          >
-            {NAV_LINKS.map((link) => (
-              <a
-              key={link.href}
-              href={link.href}
-              className=" relative text-sm font-semibold text-muted transition-colors duration-200 hover:text-foreground after:absolute after:left-0 after:-bottom-2 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
+        <AnimatePresence initial={false}>
+          {open ? (
+            <motion.nav
+              key="mobile-menu"
+              aria-label="Mobile"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{
+                duration: prefersReducedMotion ? 0 : 0.25,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="md:hidden"
             >
-              {link.label}
-            </a>
-            ))}
-            <a
-              href="#analysis"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white"
-            >
-              Launch Console
-            </a>
-          </nav>
-        ) : null}
+              <div className="flex flex-col border-t border-border-strong px-4 pb-4 pt-2 sm:px-6">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="rounded-xl px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-raised hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="#analysis"
+                  onClick={() => setOpen(false)}
+                  className="mt-3 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-strong"
+                >
+                  Launch Console
+                </a>
+              </div>
+            </motion.nav>
+          ) : null}
+        </AnimatePresence>
       </div>
     </header>
   );

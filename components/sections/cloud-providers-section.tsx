@@ -5,6 +5,7 @@ import { CLOUD_PROVIDERS, SOVEREIGN_PROVIDERS } from "@/lib/constants";
 export function CloudProvidersSection() {
   return (
     <section
+      id="cloud-providers"
       aria-labelledby="providers-heading"
       className="px-6 py-20 sm:py-24"
     >
@@ -29,7 +30,7 @@ export function CloudProvidersSection() {
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
             European sovereign clouds
           </span>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 lg:grid-cols-4">
             {SOVEREIGN_PROVIDERS.map((provider, index) => (
               <CloudProviderCard key={provider.id} provider={provider} index={index} />
             ))}
